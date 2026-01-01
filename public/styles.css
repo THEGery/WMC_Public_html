@@ -1,0 +1,89 @@
+body {
+    background-color: #111318;
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 10px 0px;
+}
+
+h1, h2, p {
+    color: #88a0af;
+    text-align: center;
+}
+
+.button {
+    width: 63px;
+    height: 24px;
+    background-color: #1f74b1;
+    color: #ffffff;
+    border-radius: 8px; /*roundness of button*/
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*HEADER*/
+
+.page-top {
+    background-color: #1b1d24;
+    padding: 10px 0px;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1750px;
+    height: 40px;
+    margin: auto;
+    color: #ffffff;
+}
+
+/*BODY*/
+
+.content-block {
+    background-color: #1b1d24;
+    max-width: 1750px;
+    margin: auto;
+}
+
+.host {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.main-content {
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+hr {
+    height: 1px;
+    background-color: #1f74b1;
+    border-color: #1f74b1;
+}
+
+/*FOOTER*/
+
+footer {
+    font-size: 14px;
+    padding: 0.5px;
+}
+
+.meme {
+    margin: 5px 0px;
+}
+
+a {color: #7d97a8;}
+
+a:visited {color: #7d97a8;}
+
+a:hover {color: #1f74b1;}
+
+a:active {color: #801fb1;}
