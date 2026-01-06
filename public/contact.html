@@ -3,56 +3,54 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Viktor Barath">
-        <meta name="description" content="Main page for demo website">
+        <meta name="description" content="Contact form to write a message">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Website</title>
+        <title>Contact Form</title>
         <script src="form.js" defer></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="page-header-container">
-            <div class="page-header">
-                <!--add an image as a logo-->
-                <img src="images/profile_jonesy.jpg" width="40px" height="40px" alt="icon" title="Icon">
-                <!-- user login-->
-                <div id="login-btn" class="button">Login</div>
+        <div class="site">
+            <div class="page-header-container">
+                <div class="page-header">
+                    <!--add an image as a logo-->
+                    <img id="logo" src="images/profile_jonesy.jpg" alt="icon" title="Icon">
+                    <!-- user login-->
+                    <div id="login-btn" class="button">Login</div>
+                </div>
+                <div class="top-nav-container">
+                    <!--page select menu-->
+                    <a class="nav-btn" href="index.html" title="Home">Home</a>
+                    <a class="nav-btn" href="images.html" title="Images">Images</a>
+                    <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
+                </div>
             </div>
-            <div class="top-nav-container">
-                <!--page select menu-->
-                <a class="nav-btn" href="index.html" title="Home">Home</a>
-                <a class="nav-btn" href="images.html" title="Images">Images</a>
-                <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
+            <div class="content-container">
+                <main>
+                    <h1>Have a question?</h1>
+                    <h2>Contact Me</h2>
+
+                    <form id="contactForm">
+                        <input type="text" id="fname" placeholder="*First Name">
+                        <input type="text" id="lname" placeholder="*Last Name">
+                        <input type="email" id="email" placeholder="*Email">
+                        <input type="text" id="phone" placeholder="Phone Number (optional)">
+                        <input type="text" id="message" placeholder="*Message">
+                        <button class="button" type="submit" id="submitBtn">Submit</button>
+                    </form>
+
+                    <p id="successMessage" class="hidden">The form was successfuly submitted!</p>
+                </main>
             </div>
-        </div>
-        <div class="content-block">
-            <main>
-                <h1>Have a question?</h1>
-                <h2>Contact Me</h2>
-
-                <hr>
-                <form id="contactForm">
-                    <input type="text" id="fname" placeholder="*First Name">
-                    <input type="text" id="lname" placeholder="*Last Name">
-                    <input type="email" id="email" placeholder="*Email">
-                    <input type="text" id="phone" placeholder="Phone Number (optional)">
-                    <input type="text" id="message" placeholder="*Message">
-                    <button type="submit" id="submitBtn">Submit</button>
-                </form>
-
-                <p id="successMessage" class="hidden">The form was successfuly submitted!</p>
-                <hr>
-
-            </main>
             <footer>
                 <div class="footer-links-container">
-                    <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contuct Me</a>
+                    <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contact Me</a>
                 </div>
                 <div class="footer-text">
                     Demo Website HTL Bulme - WMC class.
                     It aims to fullfil the requirements of the 
                     <a href="https://study.find-santa.eu/wmc/1/">assignement</a>
-                    given by Gerald Senarclens de Grancy,
-                    <br>
+                    given by Gerald Senarclens de Grancy,<br>
                     to assess our understanding and knowledge of HTML, CSS and JavaScript.
                 </div>
             </footer>

@@ -3,45 +3,113 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Viktor Barath">
-        <meta name="description" content="Main page for demo website">
+        <meta name="description" content="A collection of nice images">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Website</title>
+        <title>Images</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="page-header-container">
-            <div class="page-header">
-                <!--add an image as a logo-->
-                <img src="images/profile_jonesy.jpg" width="40px" height="40px" alt="icon" title="Icon">
-                <!-- user login-->
-                <div id="login-btn" class="button">Login</div>
-            </div>
-            <div class="top-nav-container">
-                <!--page select menu-->
-                <a class="nav-btn" href="index.html" title="Home">Home</a>
-                <a class="nav-btn" href="images.html" title="Images">Images</a>
-                <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
-            </div>
-        </div>
-        <div class="content-block">
-            <main>
-                <h1>Nice Images</h1>
-
-                <div class="images-container">
-                    (image scrolling with links)
+        <div class="site">
+            <div class="page-header-container">
+                <div class="page-header">
+                    <!--add an image as a logo-->
+                    <img id="logo" src="images/profile_jonesy.jpg" alt="icon" title="Icon">
+                    <!-- user login-->
+                    <div id="login-btn" class="button">Login</div>
                 </div>
+                <div class="top-nav-container">
+                    <!--page select menu-->
+                    <a class="nav-btn" href="index.html" title="Home">Home</a>
+                    <a class="nav-btn" href="images.html" title="Images">Images</a>
+                    <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
+                </div>
+            </div>
+            <div class="content-container">
+                <main>
+                    <h1>Nice Images</h1>
+                    <div class="images-container">
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/620337/pexels-photo-620337.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg" alt="landscape">
+                        </div>
+                        <div class="card">
+                            <img src="https://images.pexels.com/photos/724712/pexels-photo-724712.jpeg" alt="landscape">
+                        </div>
 
-            </main>
+                        <!-- <a href="https://www.pexels.com/photo/calm-body-of-lake-between-mountains-346529/" target="_blank">
+                        </a>
+                        <a href="https://www.pexels.com/photo/scenic-view-of-rice-paddy-247599/" target="_blank">
+                        </a>
+                        <a href="https://www.pexels.com/photo/dock-under-cloudy-sky-in-front-of-mountain-206359/" target="_blank">
+                        </a>
+                        <a href="https://www.pexels.com/photo/green-trees-under-blue-and-orange-sky-during-sunset-1107717/" target="_blank">
+                        </a>
+                        <a href="https://www.pexels.com/photo/green-leafed-tree-beside-body-of-water-during-daytime-158063/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/landscape-photography-of-brown-mountains-surrounding-lake-620337/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/2-people-on-the-boat-2166711/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/photo-lavender-flower-field-under-pink-sky-1166209/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/green-pine-trees-covered-with-fogs-under-white-sky-during-daytime-167699/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/beautiful-view-of-moraine-lake-2662116/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/lake-and-mountain-under-white-sky-443446/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/silhouette-of-mountains-1323550/" target="_blank">
+                        </a>
+                        <a class="card" href="https://www.pexels.com/photo/train-rail-during-golden-hour-724712/" target="_blank">
+                        </a> -->
+                    </div>
+
+                    <p id="image-ref">Images from 
+                    <a href="https://www.pexels.com/" target="_blank">
+                        <span>Pixels.com
+                        </span>
+                    </a>
+                </p>
+                </main>
+            </div>
             <footer>
                 <div class="footer-links-container">
-                    <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contuct Me</a>
+                    <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contact Me</a>
                 </div>
                 <div class="footer-text">
                     Demo Website HTL Bulme - WMC class.
                     It aims to fullfil the requirements of the 
                     <a href="https://study.find-santa.eu/wmc/1/">assignement</a>
-                    given by Gerald Senarclens de Grancy,
-                    <br>
+                    given by Gerald Senarclens de Grancy,<br>
                     to assess our understanding and knowledge of HTML, CSS and JavaScript.
                 </div>
             </footer>

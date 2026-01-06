@@ -2,12 +2,15 @@
     box-sizing: border-box;
 }
 
-main {
-    position: relative;
-}
+/* .site {
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+} */
 
 body {
-    background-color: rgb(10, 15, 28);
+    background-color: rgb(20, 19, 34);
     color: rgb(255, 255, 255);
     font-family: sans-serif;
     padding: 0;
@@ -31,7 +34,7 @@ p {
 .button {
     width: 80px;
     height: 40px;
-    background-color: rgb(31, 116, 177);
+    background-color: rgb(94, 41, 184);
     color: rgb(255, 255, 255);
     border-radius: 8px; /*roundness of button*/
     border: none;
@@ -40,6 +43,9 @@ p {
     line-height: 22px;
     text-align: center;
     cursor: pointer;
+    &:hover {
+        background-color: rgb(164, 74, 228);
+    }
 }
 
 .hidden {
@@ -50,26 +56,40 @@ p {
 
 .page-header-container, .page-header-container::after {
     position: fixed;
+    top: 0;
+    z-index: 1;
     width: 100%;
-    height: 88px;
+    height: 70px;
     margin: auto;
-    background-color: /*rgb(34, 56, 80)*/ orange;
+    background-color: rgb(35, 31, 66);
 }
 
 .page-header-container::after{
     content: '';
-    height: 32px;
+    height: 40px;
     position: absolute;
-    background-color: rgb(31, 44, 75);
+    top: 70px;
+    background-color: rgb(46, 39, 100);
 }
 
 .page-header {
+    position: relative;
     display: flex;
-    height: 56px;
+    height: 70px;
     padding: 0px;
-    width: 100%;
-    height: 56px;
     max-width: 1750px;
+    margin: auto;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
 #login-btn {
@@ -80,13 +100,27 @@ p {
 }
 
 .top-nav-container {
-    background-color: rgb(31, 44, 75);
-    height: 32px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
     margin: auto;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
-    top: 56px;
+    top: 70px;
+    z-index: 2;
+}
 
+.nav-btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3em 0.4em;
+    &:hover {
+        background-color: rgb(164, 74, 228);
+        color: rgb(255, 255, 255);
+        border-radius: 8px;
+    }
 }
 
 .login-pupup {
@@ -107,18 +141,21 @@ p {
     display: flex;
 }
 
-#overlay {
+/* #overlay {
     opacity: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
 /*BODY*/
 
-.content-block {
-    background-color: rgb(27, 29, 36);
+.content-container {
+    display: flex;
+    /* Add columns for flex */
+    justify-content: center;
+    min-height: 100vh;
     max-width: 1750px;
-    margin: auto;
+    margin: 155px auto auto auto;
 }
 
 .host {
@@ -127,30 +164,30 @@ p {
 }
 
 .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     font-size: 30px;
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
-hr {
-    height: 1px;
-    background-color: #1f74b1;
-    border-color: #1f74b1;
-}
-
 /*FOOTER*/
 
 footer {
+    background-color: rgb(35, 31, 66);
     text-align: center;
     font-size: 12px;
-    line-height: 15px;
-    padding: 0.5px;
+    line-height: 1.2em;
+    padding: 1rem 0;
+    margin: 0;
+    height: 150;
 }
 
 .footer-links-container {
-    background-color: orange;
-    padding: 10px;
-    margin: 20px 0px;
+    line-height: 1.5em;
+    margin: 1em 0;
     font-size: 20px;
 }
 
@@ -163,20 +200,84 @@ a:visited {
 }
 
 a:hover {
-    color: rgb(31, 116, 177);
+    color: rgb(178, 112, 228);
 }
 
 a:active {
-    color: rgb(128, 31, 177);
+    color: rgb(188, 107, 228);
 }
 
 /* Images page */
 
 .images-container {
-    background-color: aliceblue;
-    width: 800px;
-    height: 600px;
     display: flex;
-    justify-content: center;
+    min-width: 80em;
+    gap: 2em;
+    max-width: 1750px;
+    overflow-x: auto;
+    margin: 3em;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.card {
+    scroll-snap-align: start;
+}
+
+img {
+    max-width: 800px;
+    border-radius: 2em;
+    object-fit: scale-down;
+}
+
+#image-ref {
+    font-size: 16px;
+}
+
+/* Contact page */
+
+#successMessage {
+    margin: 3em 0 0 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr;
+    gap: 20px;
+    justify-items: center;
     align-items: center;
+}
+
+form input {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(46, 39, 100);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1em;
+    border: none;
+    display: flex;
+    align-items: start;
+    &:focus {
+        outline: 2px solid rgb(164, 74, 228);
+    }
+}
+
+#email, #phone, #message, #submitBtn {
+    width: 800px;
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#message {
+    height: 200px;
+}
+
+#submitBtn {
+    width: 150px;
 }
