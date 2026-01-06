@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+main {
+    position: relative;
+}
+
 body {
     background-color: rgb(10, 15, 28);
     color: rgb(255, 255, 255);
@@ -38,22 +42,34 @@ p {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 /*HEADER*/
 
-.page-header-container {
+.page-header-container, .page-header-container::after {
     position: fixed;
+    width: 100%;
     height: 88px;
+    margin: auto;
+    background-color: /*rgb(34, 56, 80)*/ orange;
+}
+
+.page-header-container::after{
+    content: '';
+    height: 32px;
+    position: absolute;
+    background-color: rgb(31, 44, 75);
 }
 
 .page-header {
-    position: fixed;
+    display: flex;
+    height: 56px;
     padding: 0px;
     width: 100%;
     height: 56px;
     max-width: 1750px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: /*rgb(34, 56, 80)*/ orange;
 }
 
 #login-btn {
@@ -65,12 +81,12 @@ p {
 
 .top-nav-container {
     background-color: rgb(31, 44, 75);
-    color: rgb(255, 255, 255);
     height: 32px;
+    margin: auto;
     font-size: 16px;
     width: 100%;
     top: 56px;
-    position: absolute;
+
 }
 
 .login-pupup {
@@ -152,4 +168,15 @@ a:hover {
 
 a:active {
     color: rgb(128, 31, 177);
+}
+
+/* Images page */
+
+.images-container {
+    background-color: aliceblue;
+    width: 800px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

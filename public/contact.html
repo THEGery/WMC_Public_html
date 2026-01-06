@@ -3,46 +3,52 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Viktor Barath">
-        <meta name="description" content="Contact form">
+        <meta name="description" content="Main page for demo website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Form</title>
+        <title>My Website</title>
+        <script src="form.js" defer></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="page-header">
-            <div class="left-side">
+        <div class="page-header-container">
+            <div class="page-header">
                 <!--add an image as a logo-->
-                <img href="images/profile_jonesy.jpg" alt="icon" title="Icon">
-            </div>
-            <div class="right-side">
+                <img src="images/profile_jonesy.jpg" width="40px" height="40px" alt="icon" title="Icon">
                 <!-- user login-->
-                 <div id="login-btn" class="button">Login</div>
+                <div id="login-btn" class="button">Login</div>
             </div>
             <div class="top-nav-container">
                 <!--page select menu-->
-                <a class="nav-btn" href="./index.html" title="Home">Home</a>
-                <a class="nav-btn" href="./games.html" title="Games">Games</a>
-                <a class="nav-btn" href="./contact.html" title="Contact">Contact</a>
+                <a class="nav-btn" href="index.html" title="Home">Home</a>
+                <a class="nav-btn" href="images.html" title="Images">Images</a>
+                <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
             </div>
         </div>
         <div class="content-block">
             <main>
-                <h1>Contact Me</h1>
-                <p class="host">HTL Bulme 2025</p>
-                
+                <h1>Have a question?</h1>
+                <h2>Contact Me</h2>
+
                 <hr>
-                <h2>Contact form placeholder</h2>
-                <!--Content comes here-->
+                <form id="contactForm">
+                    <input type="text" id="fname" placeholder="*First Name">
+                    <input type="text" id="lname" placeholder="*Last Name">
+                    <input type="email" id="email" placeholder="*Email">
+                    <input type="text" id="phone" placeholder="Phone Number (optional)">
+                    <input type="text" id="message" placeholder="*Message">
+                    <button type="submit" id="submitBtn">Submit</button>
+                </form>
+
+                <p id="successMessage" class="hidden">The form was successfuly submitted!</p>
                 <hr>
-                
+
             </main>
             <footer>
                 <div class="footer-links-container">
                     <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contuct Me</a>
                 </div>
                 <div class="footer-text">
-                    Demo Website is my website for HTL Bulme - WMC class.
-                    <br>
+                    Demo Website HTL Bulme - WMC class.
                     It aims to fullfil the requirements of the 
                     <a href="https://study.find-santa.eu/wmc/1/">assignement</a>
                     given by Gerald Senarclens de Grancy,
