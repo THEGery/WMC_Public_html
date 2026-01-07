@@ -1,12 +1,12 @@
 function setupForm() {
     const form = document.getElementById("contactForm");
-    const successMessage = document.getElementById("successMessage");
+    // const successMessage = document.getElementById("successMessage");
 
     form.addEventListener("submit", handleSubmit);
 }
 
 function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // To not refresh page after submit pressed
 
     const successMessage = document.getElementById("successMessage");
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", setupForm);
 
 
 function validateForm() {
-    const fName = document.getElementById("fname").value.trim();
+    const fname = document.getElementById("fname").value.trim();
     const lName = document.getElementById("lname").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
@@ -55,17 +55,17 @@ function validateForm() {
         return false;
     }
 
-    if (lName == "") {
+    if (lName === "") {
         alert("Name must be filled out!");
         return false;
     }
 
-    if (email == "") {
+    if (email === "") {
         alert("Email must be filled out!");
         return false;
     }
 
-    if (message == "") {
+    if (message === "") {
         alert("Message must be filled out!");
         return false;
     }

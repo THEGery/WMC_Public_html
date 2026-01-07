@@ -6,16 +6,18 @@
         <meta name="description" content="Main page for demo website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Website</title>
+        <script src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="site">
             <div class="page-header-container">
                 <div class="page-header">
-                    <!--add an image as a logo-->
                     <img id="logo" src="images/profile_jonesy.jpg" alt="icon" title="Icon">
                     <!-- user login-->
-                    <div id="login-btn" class="button">Login</div>
+                    <div data-login-target="#loginPopup" id="login-btn" class="button">
+                        Login
+                    </div>
                 </div>
                 <div class="top-nav-container">
                     <!--page select menu-->
@@ -26,10 +28,10 @@
             </div>
 
             <!--Login popup-->
-            <!-- <div class="login-popup" id="login-popup">
+            <div class="loginPopup" id="loginPopup">
                 <div class="login-header">
                     <div class="login-title">Login</div>
-                    <button class="close-btn">&times;</button>
+                    <button data-close-button class="close-btn">&times;</button>
                 </div>
                 <div class="login-body">
                     <input id="username" type="text" placeholder="Username" required><br>
@@ -37,7 +39,7 @@
                 </div>
             </div>
 
-            <div id="overlay"></div> -->
+            <div class="" id="overlay"></div>
             <!--Login popups end-->
 
             <div class="content-container">
