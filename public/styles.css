@@ -20,8 +20,9 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 5em;
     margin: 10px 0px;
+    -webkit-text-stroke: 2px rgb(46, 39, 100);
 }
 
 p {
@@ -186,6 +187,21 @@ p {
     font-size: 12px;
 }
 
+
+.background_image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 500px;
+    width: auto;
+    background-image: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
@@ -303,4 +319,51 @@ form input {
 
 #submitBtn {
     width: 150px;
+}
+
+/* Calculator page */
+
+.list {
+    margin: 4em 0;
+}
+
+.list p {
+    text-align: left;
+    font-size: 1rem;
+}
+
+#calculateBtn {
+    grid-column: span 3;
+    min-width: 150px;
+}
+
+#calculatorContainer {
+    display: grid;
+    grid-template-columns: 2fr auto 2fr;
+    grid-template-rows: 2fr;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#calculatorContainer input {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgb(46, 39, 100);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1em;
+    border: none;
+    display: flex;
+    align-items: start;
+    &:focus {
+        outline: 2px solid rgb(164, 74, 228);
+    }
+}
+
+#calculatorContainer p {
+    font-size: 1.5em;
+    font-weight: 900;
 }
