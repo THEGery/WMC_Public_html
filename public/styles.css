@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-/* .site {
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: minmax(0, 1fr);
-} */
-
 body {
     background-color: rgb(20, 19, 34);
     color: rgb(255, 255, 255);
@@ -20,9 +13,15 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
     margin: 10px 0px;
-    -webkit-text-stroke: 2px rgb(46, 39, 100);
+    margin: 2rem 0;
+}
+
+#main-header-txt {
+    font-size: 6em;
+    margin: 0;
+    -webkit-text-stroke: 3px rgb(46, 39, 100);
 }
 
 p {
@@ -41,6 +40,7 @@ p {
     border: none;
     padding: 8px 16px;
     font-size: 16px;
+    font-weight: 600;
     line-height: 22px;
     text-align: center;
     cursor: pointer;
@@ -52,6 +52,28 @@ p {
     }
 }
 
+.close-button {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(94, 41, 184);
+    color: rgb(255, 255, 255);
+    border-radius: 8px; /*roundness of button*/
+    border: none;
+    padding: 8px 8px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(164, 74, 228);
+    }
+    &:active {
+        background-color: rgb(94, 41, 184);
+    }
+}
+
+/* to hide elements*/
 .hidden {
     display: none;
 }
@@ -106,20 +128,30 @@ p {
 .top-nav-container {
     position: absolute;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
     height: 40px;
-    margin: auto;
     font-size: 18px;
     width: 100%;
+    margin: auto;
     top: 70px;
     z-index: 2;
+}
+
+.top-nav-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: center;
+    max-width: 1750px;
+    margin: 0 auto;
 }
 
 .nav-btn {
     text-decoration: none;
     font-weight: 600;
-    padding: 0.3em 0.4em;
+    padding: 0.3em 1em;
     &:hover {
         background-color: rgb(164, 74, 228);
         color: rgb(255, 255, 255);
@@ -134,12 +166,12 @@ p {
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     z-index: 100;
-    background-color: red;
-    border: 5px solid black;
-    border-radius: 8px;
-    width: 500px;
+    background-color: rgb(35, 31, 66);
+    border-radius: 1em;
+    border: 3px rgb(164, 74, 228) solid;
+    width: 400px;
     max-width: 80%;
-    height: 400px;
+    height: fit-content;
 }
 
 .loginPopup.active {
@@ -147,11 +179,63 @@ p {
 }
 
 .login-header {
-    padding: 10px 15px;
+    padding: 2em 2em;
     display: flex;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
 }
 
-#overlay {
+.login-title {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.login-body {
+    padding: 0em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-body input {
+    border-radius: 10px;
+    background-color: rgb(46, 39, 100);
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1em;
+    border: none;
+    display: flex;
+    align-items: start;
+    &:focus {
+        outline: 2px solid rgb(164, 74, 228);
+    }
+}
+
+#register-test {
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.5em 0em;
+}
+
+#username, #password {
+    width: 100%;
+}
+
+#popup-login-btn {
+    margin-top: 1em; 
+    width: 100%;
+}
+
+#close-btn {
+    position: absolute;
+    right: 30px;
+}
+
+.overlay {
     position: fixed;
     margin: 0;
     height: 100vh;
@@ -162,11 +246,11 @@ p {
     left: 0;
     opacity: 0;
     pointer-events: none;
-    background-color: rgb(35, 31, 66, .5);
-    z-index: 5;
+    background-color: rgb(35, 31, 66, .8);
+    z-index: 50;
 }
 
-#overlay.active {
+.overlay.active {
     opacity: 1;
     pointer-events: all;
 }
@@ -180,6 +264,7 @@ p {
     min-height: 100vh;
     max-width: 1750px;
     margin: 155px auto auto auto;
+    padding-bottom: 4em;
 }
 
 .host {
@@ -246,6 +331,7 @@ a:active {
     color: rgb(188, 107, 228);
 }
 
+
 /* Images page */
 
 .images-container {
@@ -259,8 +345,8 @@ a:active {
     scroll-snap-type: x mandatory;
 }
 
-.card {
-    scroll-snap-align: start;
+.card, .card-spacer{
+    scroll-snap-align: center;
 }
 
 img {
@@ -272,6 +358,7 @@ img {
 #image-ref {
     font-size: 16px;
 }
+
 
 /* Contact page */
 
@@ -288,24 +375,24 @@ form {
     align-items: center;
 }
 
-form input {
+form input,form textarea {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     background-color: rgb(46, 39, 100);
     color: rgb(255, 255, 255);
+    font-family: sans-serif;
     font-size: 1rem;
     font-weight: 200;
     padding: 1em;
     border: none;
     display: flex;
-    align-items: start;
     &:focus {
         outline: 2px solid rgb(164, 74, 228);
     }
 }
 
-#email, #phone, #message, #submitBtn {
+#email, #phone, #message, #submitBtn, #registerBtn {
     width: 800px;
     grid-column: span 2;
     display: flex;
@@ -313,12 +400,24 @@ form input {
     justify-content: center;
 }
 
-#message {
-    height: 200px;
+/* Registration form */
+#uname, #reg-pwd, #reg-pwd-conf {
+    grid-column: span 2;
 }
 
-#submitBtn {
-    width: 150px;
+#message {
+    height: 200px;
+    resize: none;
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+    /* overflow-y: scroll; */   /* controlled by js */
+    overflow-y: hidden;
+    white-space: pre-wrap;
+}
+
+#submitBtn, #registerBtn {
+    width: 200px;
 }
 
 /* Calculator page */

@@ -1,37 +1,9 @@
-function setupForm() {
-    const form = document.getElementById("contactForm");
-    // const successMessage = document.getElementById("successMessage");
-
-    form.addEventListener("submit", handleSubmit);
-}
-
-function handleSubmit(event) {
-    event.preventDefault(); // To not refresh page after submit pressed
-
-    const successMessage = document.getElementById("successMessage");
-
-    if (validateForm()) {
-        successMessage.classList.remove("hidden");
-
-        setTimeout(hideSuccessMessage, 3000);
-    }
-}
-
-function hideSuccessMessage() {
-    const successMessage = document.getElementById("successMessage");
-    successMessage.classList.add("hidden");
-}
-
-document.addEventListener("DOMContentLoaded", setupForm);
-
-// Alternative version (shorter)
-
-/* document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {   // Event = layout loaded
     const form = document.getElementById("contactForm");
     const successMessage = document.getElementById("successMessage");
 
-    form.addEventListener("submit", event => {
-        event.preventDefault();
+    form.addEventListener("submit", event => {  // event is genereated by the browser
+        event.preventDefault(); // To not refresh page after submit pressed
 
         if(validateForm()) {
             successMessage.classList.remove("hidden");
@@ -41,7 +13,7 @@ document.addEventListener("DOMContentLoaded", setupForm);
             }, 3000);
         }
     });
-}); */
+});
 
 
 function validateForm() {
@@ -60,8 +32,13 @@ function validateForm() {
         return false;
     }
 
+    const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (email === "") {
         alert("Email must be filled out!");
+        return false;
+    } else if (!emailRegExp.test(email)) {
+        alert("Please enter a valid email address.");
         return false;
     }
 
@@ -72,3 +49,24 @@ function validateForm() {
 
     return true;
 }
+
+
+// expanding message box
+const textarea = document.getElementById('message')
+
+function autoResize(element) {
+    element.style.height = 'auto';
+    const newHeight = Math.min(el.scrollHeight, 1000);
+
+    element.style.height = Math.max(newHeight, 200) + 'px';
+
+    if (el.scrollHeight > 1000) {
+        element.style.overflowY = 'auto';
+    } else {
+        element.style.overflowY = 'hidden';
+    }
+}
+
+textarea.addEventListener('input', () => autoResize(textarea));
+
+autoResize(textarea);

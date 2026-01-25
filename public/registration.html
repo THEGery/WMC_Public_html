@@ -5,34 +5,64 @@
         <meta name="author" content="Viktor Barath">
         <meta name="description" content="Registration">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Demo Website</title>
+        <title>Registration</title>
+        <script src="form.js" defer></script>
+        <script src="script.js" defer></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="page-header">
-            <div class="left-side">
-                <!--add an image as a logo-->
-                <img href="images/profile_jonesy.jpg" alt="icon" title="Icon">
+        <div class="site">
+            <div class="page-header-container">
+                <div class="page-header">
+                    <img id="logo" src="images/profile_jonesy.jpg" alt="icon" title="Icon">
+                    <!-- user login-->
+                    <div id="login-btn" class="button">
+                        Login
+                    </div>
+                </div>
+                <div class="top-nav-container">
+                    <!--page select menu-->
+                    <div class="top-nav-elements">
+                        <a class="nav-btn" href="index.html" title="Home">Home</a>
+                        <a class="nav-btn" href="images.html" title="Images">Images</a>
+                        <!-- <a class="nav-btn" href="calculator.html" title="Calculator">Calculator</a> -->
+                        <a class="nav-btn" href="contact.html" title="Contact">Contact</a>
+                    </div>
+                </div>
             </div>
-            <div class="right-side">
-                
+
+            <!--Login popup-->
+            <div class="overlay" id="overlay"></div>
+
+            <div class="loginPopup" id="loginPopup">
+                <div class="login-header">
+                    <div class="login-title">Login</div>
+                    <button id="close-btn" class="close-button">&times;</button>
+                </div>
+                <div class="login-body">
+                    <p id="register-test">Don't have an account? <a href="registration.html">Register</a></p>
+                    <input id="username" type="text" placeholder="Username" required /><br>
+                    <input id="password" type="password" placeholder="Password" required />
+                    <div id="popup-login-btn" class='button'>Login</div>
+                </div>
             </div>
-            <div class="top-nav-container">
-                <!--page select menu-->
-                <a class="nav-btn" href="./index.html" title="Home">Home</a>
-                <a class="nav-btn" href="./games.html" title="Games">Games</a>
-                <a class="nav-btn" href="./contact.html" title="Contact">Contact</a>
+            <!--Login popups end-->
+        <div class="content-container">
+                <main>
+                    <h1>Registration form</h1>
+
+                    <form id="contactForm">
+                        <input type="text" id="uname" placeholder="*User Name">
+                        <input type="text" id="fname" placeholder="*First Name">
+                        <input type="text" id="lname" placeholder="*Last Name">
+                        <input type="email" id="email" placeholder="*Email">
+                        <input type="reg-pwd" id="reg-pwd" placeholder="*Password">
+                        <input type="reg-pwd-conf" id="reg-pwd-conf" placeholder="*Confirm Password">
+                        <!-- <input type="text" id="message" placeholder="*Message"> -->
+                        <button class="button" type="register" id="registerBtn">Register</button>
+                    </form>
+                </main>
             </div>
-        </div>
-        <div class="content-block">
-            <main>
-                <h1>Registration</h1>
-                <p class="host">HTL Bulme 2025</p>
-                <h2>Register</h2>
-                <input id="regUsername" placeholder="Username">
-                <input id="regPassword" type="password" placeholder="Password">
-                <button class="button" onclick="register()">Register</button>
-            </main>
             <footer>
                 <div class="footer-links-container">
                     <a class="footer-links" href="contact.html" title="Contact" target="_blank">Contuct Me</a>
